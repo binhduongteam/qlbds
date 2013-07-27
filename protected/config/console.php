@@ -12,7 +12,7 @@ return array(
 	// application components
 	'components'=>array(
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=bdbds',
+			'connectionString' => 'mysql:host=localhost;dbname=qlbds',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '123456',
