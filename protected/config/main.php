@@ -9,6 +9,7 @@ return array(
 	'theme'=>'admin',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'QLBDS',
+    'defaultController'=>'site',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

@@ -1,7 +1,23 @@
 <?php
 
-class SiteController extends Controller
+class ProjectController extends Controller
 {
+	public function filters() {
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+	
+	public function accessRules()
+    {
+        return array(
+            array('allow', // allow authenticated users to access all actions
+                'users'=>array('admin'),
+            ),
+            array('deny'),
+        );
+    }
+    
 	/**
 	 * Declares class-based actions.
 	 */
@@ -27,11 +43,10 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		if(Yii::app()->user->id) {
-			$this->redirect(CController::CreateUrl('/dashboard'));	
-		}else{
-			$this->redirect(CController::CreateUrl('/user/login'));
-		}
+		$cs = Yii::app()->clientScript;
+        $cs->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery.maphilight.min.js', CClientScript::POS_END);
+        $cs->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery.qtip-1.0.0-rc3.min.js', CClientScript::POS_END);
+		$this->render('index');
 	}
 
 	/**

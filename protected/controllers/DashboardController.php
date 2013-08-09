@@ -1,7 +1,23 @@
 <?php
 
-class SiteController extends Controller
+class DashboardController extends Controller
 {
+	public function filters() {
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+	
+	public function accessRules()
+    {
+        return array(
+            array('allow', // allow authenticated users to access all actions
+                'users'=>array('admin'),
+            ),
+            array('deny'),
+        );
+    }
+
 	/**
 	 * Declares class-based actions.
 	 */
@@ -27,11 +43,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		if(Yii::app()->user->id) {
-			$this->redirect(CController::CreateUrl('/dashboard'));	
-		}else{
-			$this->redirect(CController::CreateUrl('/user/login'));
-		}
+		$this->render('index');
 	}
 
 	/**
