@@ -17,8 +17,18 @@
 					'itemCssClass'=>'item-test',
                     'encodeLabel'=>false,
                     'items'=>array(
-                        array('label'=>'Dashboard', 'url'=>array('/dashboard'), 'visible'=>!Yii::app()->user->isGuest),
-                        array('label'=>'Project', 'url'=>array('/project/index'), 'visible'=>!Yii::app()->user->isGuest),
+                        array('label'=>'Bảng Điều Khiển', 'url'=>array('/dashboard'), 'visible'=>!Yii::app()->user->isGuest),
+                        array('label'=>'Dự Án', 'url'=>array('/project/index'), 'visible'=>!Yii::app()->user->isGuest),
+
+                        array('label'=>'Quản Trị <span class="caret"></span>', 'url'=>'#', 'visible'=>!Yii::app()->user->isGuest, 'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"), 
+                            'items'=>array(
+                                array('label'=>'Dự Án', 'url'=> array('/project/index')),
+                                array('label'=>'Lô', 'url'=> array('/lo/index')),
+                                array('label'=>'Lóc', 'url'=> array('/loc/index')),
+                                array('label'=>'Thoát ('.Yii::app()->user->name.')', 'url'=>array('/site/logout')),
+                            )
+                          ),
+
       //                   array('label'=>'Graphs & Charts', 'url'=>array('/site/page', 'view'=>'graphs')),
       //                   array('label'=>'Forms', 'url'=>array('/site/page', 'view'=>'forms')),
       //                   array('label'=>'Tables', 'url'=>array('/site/page', 'view'=>'tables')),
@@ -34,7 +44,6 @@
 						// 	array('label'=>'One more separated link', 'url'=>'#'),
       //                   )),
                         // array('label'=>'Login', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
-                        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
                     ),
                 )); ?>
     	</div>
