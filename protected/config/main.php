@@ -5,8 +5,9 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+$language='vi';
 return array(
-	'theme'=>'admin',
+	'theme'=>'admin','language'=>$language,
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'QLBDS',
     'defaultController'=>'site',
@@ -25,7 +26,7 @@ return array(
 	'modules'=>array(
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'123456',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
@@ -81,7 +82,7 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=bdbds',
 			'emulatePrepare' => true,
-			'username' => 'root',
+			'username' => 'locnt',
 			'password' => '123456',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
