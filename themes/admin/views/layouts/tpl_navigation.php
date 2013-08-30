@@ -17,14 +17,14 @@
 					'itemCssClass'=>'item-test',
                     'encodeLabel'=>false,
                     'items'=>array(
-                        array('label'=>'Bảng Điều Khiển', 'url'=>array('/dashboard'), 'visible'=>!Yii::app()->user->isGuest),
-                        array('label'=>'Dự Án', 'url'=>array('/project/index'), 'visible'=>!Yii::app()->user->isGuest),
+                        array('label'=>'Bảng điều khiển', 'url'=>array('/dashboard'), 'visible'=>!Yii::app()->user->isGuest),
+                        array('label'=>'Dự án', 'url'=>array('/DuAn/index'), 'visible'=>!Yii::app()->user->isGuest),
 
-                        array('label'=>'Quản Trị <span class="caret"></span>', 'url'=>'#', 'visible'=>!Yii::app()->user->isGuest, 'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"), 
+                        array('label'=>'Quản trị <span class="caret"></span>', 'url'=>'#', 'visible'=>!Yii::app()->user->isGuest, 'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown"), 
                             'items'=>array(
-                                array('label'=>'Dự Án', 'url'=> array('/project/index')),
-                                array('label'=>'Lô', 'url'=> array('/lo/index')),
-                                array('label'=>'Lóc', 'url'=> array('/loc/index')),
+                                array('label'=>'Dự án', 'url'=> array('/DuAn/index')),
+                                array('label'=>'Lô', 'url'=> array('/Lo/index')),
+                                array('label'=>'Loc', 'url'=> array('/Loc/index')),
                                 array('label'=>'Thoát ('.Yii::app()->user->name.')', 'url'=>array('/site/logout')),
                             )
                           ),
