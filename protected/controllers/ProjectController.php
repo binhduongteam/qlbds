@@ -2,6 +2,8 @@
 
 class ProjectController extends Controller
 {
+
+	public $layout='//layouts/column3';
 	public function filters() {
 		return array(
 			'accessControl', // perform access control for CRUD operations
